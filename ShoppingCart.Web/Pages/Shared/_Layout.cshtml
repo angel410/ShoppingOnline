@@ -1,0 +1,123 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var u = @HttpContextAccessor.HttpContext.Session.GetString("UserRole");
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /*     a {
+            color: #ffffff !important;
+        }*/
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewpoint" content="width=device-width,initial-scal=1.0">
+    <meta http-equip="X-UA-compatible" content="ie=edge">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="~/js/jquery.store.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="topnav">
+                @*<a style="color:white;" class="active" href="#home">Home</a>*@
+                <a class="active" href="@Url.Action("Index", "Home")">
+                    Home
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ml-auto">
+                    @if (@HttpContextAccessor.HttpContext.Session.GetString("UserRole") != "1")
+                    {
+                        <li class="nav-item ">
+                            <a style="color: white;" class="nav-link" href="@Url.Action("Index", "Products")">
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a style="color: white;" class="nav-link" href="@Url.Action("Index", "Users")">
+                                Users
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a style="color: white;" class="nav-link" href="@Url.Action("AllOrders", "Home")">
+                                orders
+                            </a>
+                        </li>
+                    }
+                    @if (@HttpContextAccessor.HttpContext.Session.GetString("UserRole") == "1")
+                    {
+                        <li class="nav-item ">
+                            <a style="color: white;" class="nav-link" href="@Url.Action("CustomerOrders", "Home")">
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nav-ite">
+
+                            <a style="color: white;" class="nav-link" href="@Url.Action("CartDetails", "Home")">
+                                Cart
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link" href="#about">About Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link" href="#services">Our Services</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a style="color: white;" class="nav-link" href="#team" tabindex="-1" aria-disabled="true">Our Team</a>
+                        </li>
+                    }
+
+
+                    <li class="nav-item">
+                        <a style="color: white;" class="nav-link" href="@Url.Action("Logout", "Users")">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </section>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - ShoppingCart.Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

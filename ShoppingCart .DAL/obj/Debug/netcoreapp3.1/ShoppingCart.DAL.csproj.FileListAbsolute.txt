@@ -1,0 +1,13 @@
+D:\ShoppingCart\ShoppingCart .DAL\bin\Debug\netcoreapp3.1\ShoppingCart.DAL.deps.json
+D:\ShoppingCart\ShoppingCart .DAL\bin\Debug\netcoreapp3.1\ShoppingCart.DAL.runtimeconfig.json
+D:\ShoppingCart\ShoppingCart .DAL\bin\Debug\netcoreapp3.1\ShoppingCart.DAL.runtimeconfig.dev.json
+D:\ShoppingCart\ShoppingCart .DAL\bin\Debug\netcoreapp3.1\ShoppingCart.DAL.dll
+D:\ShoppingCart\ShoppingCart .DAL\bin\Debug\netcoreapp3.1\ShoppingCart.DAL.pdb
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.csproj.AssemblyReference.cache
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.AssemblyInfoInputs.cache
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.AssemblyInfo.cs
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.csproj.CoreCompileInputs.cache
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.dll
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.pdb
+D:\ShoppingCart\ShoppingCart .DAL\obj\Debug\netcoreapp3.1\ShoppingCart.DAL.genruntimeconfig.cache

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ShoppingCart_.DAL.Models.Order>
+
+@{
+    ViewData["Title"] = "AllOrders";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>AllOrders</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.OrderTotlPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Users.UserName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTotlPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Users.UserName)
+            </td>
+         
+        </tr>
+}
+    </tbody>
+</table>

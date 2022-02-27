@@ -1,0 +1,57 @@
+﻿@using ShoppingCart_.DAL.Models;
+@{
+    List<OrderDetails> OrderDetail = ViewBag.cart as List<OrderDetails>;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Shopping Cart</title>
+    <meta charset="utf-8" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="~/js/jquery.store.js"></script>
+</head>
+
+<body>
+
+    <div id="site">
+
+        <div id="content">
+            <h1>Your Shopping Cart</h1>
+            <table class="shopping-cart">
+                <thead>
+                    <tr>
+                        <th>Order Date</th>
+                        <th>Order Total Price</th>
+                        <th>Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in OrderDetail)
+                    {
+                    <tr>
+                        <td scope="col">@item.Order.OrderDate</td>
+                        <td scope="col">@item.Order.OrderTotlPrice</td>
+                        <td scope="col" colspan="2">@item.Product.Name</td>
+
+                    </tr>
+                    }
+
+                </tbody>
+                <tbody>
+                </tbody>
+            </table>
+           
+        </div>
+
+
+
+    </div>
+
+    <footer id="site-info">
+        Copyright &copy;
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ShoppingCart_.DAL.Models.OrderDetails>
+
+@{
+    ViewData["Title"] = "CustomerOrderDetails";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+          
+         
+            <th>
+               Product
+            </th>
+            <th>
+                Quantity
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          
+       
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,85 @@
+﻿@using ShoppingCart_.DAL.Models;
+@{ List<CarttIems> CarttIems = ViewBag.cart as List<CarttIems>;
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Shopping Cart</title>
+    <meta charset="utf-8" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="~/js/jquery.store.js"></script>
+</head>
+
+<body>
+
+    <div id="site">
+
+        <div id="content">
+
+            @if (CarttIems.Count()>0)
+            {
+                      <h1>Your Shopping Cart</h1>
+                        <table class="shopping-cart">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in CarttIems)
+                                {
+                                <tr>
+                                    <td scope="col">@item.Products.Name</td>
+                                    <td scope="col">@item.Quantity</td>
+                                    <td scope="col" >@item.Price</td>
+                                    <td scope="col">
+                                        <a class="btn btn-primary text-white" href="@Url.Action("DeleteItemFromCart", "Home", new { id = item.Id })">
+                                            <i class="fa fa-pencil-square-o"></i>&nbsp;Delete
+                                        </a>
+
+                                    </td>
+                                </tr>
+}
+
+
+
+                            </tbody>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                      <ul id="shopping-cart-actions">
+
+                                            <li>
+
+                                                @Html.ActionLink("Continue Shopping", "Index", "Home", new { @class = "btn1" })
+                                            </li>
+                                            <li>
+                                                @using (Html.BeginForm("Order", "Home", FormMethod.Post))
+                                                {
+                                <input type="submit" value="Go To Checkout" class="btn1" />}
+                                            </li>
+                                        </ul> 
+            }
+            else
+            {
+                        <h1>Cart Is Empty</h1>      
+             }
+        </div>
+
+
+
+    </div>
+
+    <footer id="site-info">
+        Copyright &copy;
+    </footer>
+
+</body>
+</html>
