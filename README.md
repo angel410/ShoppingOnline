@@ -22,7 +22,8 @@ This project using Repository Pattern, please find below the design pattern sket
 As per above pattern The Repository pattern. Repositories are classes or components that encapsulate the logic required to access data sources.
 
 
-
+# Database Diagram
+<a href="https://drive.google.com/file/d/1Cx-tnPObR1GXLziQ5LXtQbnzwPd-98HH/view?usp=sharing" src ="https://drive.google.com/file/d/1Cx-tnPObR1GXLziQ5LXtQbnzwPd-98HH/view?usp=sharing"></a>
 # Technologies
 
 This project using ASP.net core as a backend,  and SQL SERVER  as DB engine
